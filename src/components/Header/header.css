@@ -1,0 +1,11 @@
+.header-container {
+  background-color: #222;
+  height: 100px;
+  padding: 10px;
+  vertical-align: middle;
+  color: white;
+}
+
+.header-title {
+  text-align: center;
+}

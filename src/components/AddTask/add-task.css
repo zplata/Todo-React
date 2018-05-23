@@ -1,0 +1,19 @@
+.add-task-container {
+  width: 100%;
+  text-align: center;
+}
+
+.add-task-container form {
+  display: inline-block;
+  width: 50%;
+}
+
+.add-task-entry {
+  width: 80%;
+}
+
+@media (max-width: 975px) {
+  .add-task-container form {
+    width: 100%;
+  }
+}

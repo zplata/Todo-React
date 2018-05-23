@@ -1,0 +1,9 @@
+.list-item-container {
+  border-width: 2px 2px 0 2px;
+  border-color: #000;
+  border-style: solid;
+}
+
+.list-item-container:last-child {
+  border-width: 2px 2px 2px 2px;
+}
