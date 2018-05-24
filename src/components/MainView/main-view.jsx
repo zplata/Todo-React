@@ -39,7 +39,6 @@ class MainView extends Component {
     });
     this.setState({ tasks: newTasksList });
     localStorage.setItem('justdoit_tasks', JSON.stringify(newTasksList));
-    console.log(localStorage.getItem('justdoit_tasks'));
   }
 
   /**
@@ -64,7 +63,8 @@ class MainView extends Component {
         isComplete={taskItem.isCompleted}
         taskName={taskItem.task}
         toggleStatus={this.toggleStatus}
-      />)) : 'You don\'t have any tasks to do';
+      />)) : [];
+    const emptyTasksListMessage = 'You don\'t have any tasks to do';
 
     const completeTasks = this.state.tasks.filter(task => task.isCompleted);
     const completedTasksList = completeTasks.length ? completeTasks.map(taskItem =>
@@ -74,7 +74,8 @@ class MainView extends Component {
         isComplete={taskItem.isCompleted}
         taskName={taskItem.task}
         toggleStatus={this.toggleStatus}
-      />)) : 'You have not completed any tasks';
+      />)) : [];
+    const emptyCompletedTasksListMessage = 'You have not completed any tasks';
 
     return (
       <div className="main-view-container">
@@ -82,11 +83,11 @@ class MainView extends Component {
         <AddTask addItem={this.addTask} />
         <div className="tasks-container">
           <h2>My Tasks</h2>
-          <div className={incompleteTasks.length ? 'list-white-bg' : ''}><List>{myList}</List></div>
+          <div className={incompleteTasks.length ? 'list-white-bg' : ''}>{myList.length ? <List>{myList}</List> : emptyTasksListMessage}</div>
         </div>
         <div className="tasks-container">
           <h2>Completed</h2>
-          <div className={completeTasks.length ? 'list-white-bg' : ''}><List>{completedTasksList}</List></div>
+          <div className={completeTasks.length ? 'list-white-bg' : ''}>{completedTasksList.length ? <List>{completedTasksList}</List> : emptyCompletedTasksListMessage}</div>
         </div>
       </div>
     );

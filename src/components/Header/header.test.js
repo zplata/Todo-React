@@ -10,6 +10,6 @@ describe('Header', () => {
   });
 
   it('contains header text', () => {
-    expect(component.find('h1').text()).toEqual('Just Do It.');
+    expect(component.find('h1').text()).toEqual('TASK IT');
   });
 });

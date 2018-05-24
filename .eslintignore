@@ -2,3 +2,4 @@ node_modules/
 src/registerServiceWorker.js
 src/index.js
 *.test.js
+src/setupTests.js

@@ -12,7 +12,7 @@
   width: 80%;
 }
 
-@media (max-width: 975px) {
+@media (max-width: 650px) {
   .add-task-container form {
     width: 100%;
   }
